@@ -17,7 +17,7 @@ html, body {
 }
 
 body.response {
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
 }
 
 /* ———— CSS全局变量 ———— */
@@ -115,7 +115,6 @@ i[class^='icon'].icon-only {
     margin: 12px 0 0 0;
     color: #d3d3d3;
     background-color: #38393e;
-    border: none;
 }
 .ibibi-aside .layui-btn:hover,
 .ibibi-aside .layui-btn.active,
