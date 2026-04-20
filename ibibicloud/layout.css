@@ -1,0 +1,191 @@
+
+/* ———— 引入字体 ———— */
+/*https://www.googlefonts.cn*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+html, body {
+    font-family:
+        "Inter",
+        -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Helvetica Neue",
+        "PingFang SC", "Hiragino Sans GB",
+        sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #6F7479;
+}
+body.response {
+    font-display: swap;
+    box-sizing: border-box;
+}
+
+/* ———— CSS全局变量 ———— */
+:root {
+    --ibibi-border-color: #161823;
+    --ibibi-aside-width: 180px;
+    --ibibi-nav-height: 72px;
+}
+
+/* ———— 框架主体布局 ———— */
+aside, nav, main {
+    position: fixed;
+}
+
+/* 侧边栏 */
+aside {
+    top: 0;
+    width: var(--ibibi-aside-width);
+    bottom: 0;
+    left: 0;
+    border-right: 1px solid var(--ibibi-border-color);
+    background-color: #2c2e30;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+}
+
+/* 顶部导航 */
+nav {
+    top: 0;
+    right: 0;
+    height: var(--ibibi-nav-height);
+    left: calc(var(--ibibi-aside-width) + 1px);
+    border-bottom: 1px solid var(--ibibi-border-color);
+    z-index: 9999;
+    transition: left 0.3s ease !important;
+}
+
+/* 主内容区 */
+main {
+    top: calc(var(--ibibi-nav-height) + 1px);
+    right: 0;
+    bottom: 0;
+    left: calc(var(--ibibi-aside-width) + 1px);
+    overflow-y: auto;
+    transition: left 0.3s ease !important;
+    background: #fff;
+}
+
+/* ———— 图标通用样式 ———— */
+i[class^='icon'] {
+    font-size: 16px;
+    margin: 2px 5px 0 0;
+}
+i[class^='icon'].icon-only {
+    margin-right: 0;
+}
+
+/* ———— 框架侧边栏伸缩 ———— */
+.ibibi-shrink aside {
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+.ibibi-shrink nav {
+    left: 0;
+}
+.ibibi-shrink main {
+    left: 0;
+}
+
+/* ———— Logo 样式 ———— */
+.ibibi-logo {
+    display: flex;
+    min-height: 72px;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #ccc;
+}
+.ibibi-logo img {
+    width: calc(var(--ibibi-aside-width) - 40px);
+    margin: 20px;
+}
+
+/* ———— 侧边栏菜单 ———— */
+.ibibi-aside {
+    padding: 0 11px 0 12px;
+}
+.ibibi-aside .layui-btn {
+    width: 100%;
+    height: 40px;
+    margin: 0 0 12px 0;
+    color: #d3d3d3;
+    background-color: #38393e;
+    border: none;
+}
+.ibibi-aside .layui-btn:hover,
+.ibibi-aside .layui-btn.active,
+.ibibi-nav .layui-btn:hover,
+.ibibi-nav .layui-btn.active {
+    color: #fff;
+    background-color: #5c667a;
+}
+
+/* ———— 顶部导航栏 ———— */
+.ibibi-nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 15px;
+    background-color: #2c2e30;
+}
+.ibibi-nav .layui-btn {
+    height: 40px;
+    color: #d3d3d3;
+    background-color: #38393e;
+    border: none;
+}
+nav .layui-nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    background-color: transparent;
+}
+
+/* ———— 主内容区 ———— */
+main iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.ibibi-main {
+    padding: 15px;
+}
+
+/* ———— 弹窗样式优化 ———— */
+.swal-modal {
+    width: 300px;
+    padding: 0 0 15px 0;
+}
+.swal-title {
+    padding: 0 16px 13px 16px;
+}
+.swal-footer {
+    text-align: center;
+    margin-top: 0;
+}
+
+/* ———— 移动端适配 ———— */
+@media (max-width: 768px) {
+    :root {
+        --ibibi-aside-width: 180px;
+    }
+    aside {
+        top: var(--ibibi-nav-height) !important;
+        width: 0;
+        border: none;
+        overflow: hidden;
+        z-index: 10000;
+    }
+    .ibibi-shrink aside {
+        top: var(--ibibi-nav-height) !important;
+        width: var(--ibibi-aside-width) !important;
+        border-right: 1px solid var(--ibibi-border-color) !important;
+        opacity: 1;
+        visibility: visible;
+    }
+    nav, main {
+        left: 0 !important;
+    }
+}

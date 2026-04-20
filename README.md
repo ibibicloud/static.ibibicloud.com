@@ -3,10 +3,16 @@
 
 ### 用法示例
 ~~~
-<link href="https://static.ibibicloud.com/layui/2.11.2/css/layui.css" rel="stylesheet">
+<link rel="stylesheet" href="https://static.ibibicloud.com/layui/2.11.2/css/layui.css">
 ~~~
 ~~~
 <script src="https://static.ibibicloud.com/layui/2.11.2/layui.js"></script>
+~~~
+
+
+### Layout CSS
+~~~
+<link rel="stylesheet" href="https://static.ibibicloud.com/ibibicloud/layout.css">
 ~~~
 
 ### 包含的静态资源列表
