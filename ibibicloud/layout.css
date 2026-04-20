@@ -70,7 +70,7 @@ main {
 /* ———— 图标通用样式 ———— */
 i[class^='icon'] {
     font-size: 16px;
-    margin: 2px 5px 0 0;
+    margin: 0 5px 0 0;
 }
 i[class^='icon'].icon-only {
     margin-right: 0;
